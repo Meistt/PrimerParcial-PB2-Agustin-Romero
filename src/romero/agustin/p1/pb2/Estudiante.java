@@ -59,4 +59,11 @@ public class Estudiante {
 			}
 		}
 	}
+	public boolean pedirPrestadoUnSegundoLibro(Boolean estadoRetorno, int segundoPrestamo) {
+		if(segundoPrestamo==1 && estadoRetorno.equals(true)) {
+			
+			estadoRetorno=false;//ya no puede pedir prestado más libros
+		}
+		return estadoRetorno;
+	}
 }

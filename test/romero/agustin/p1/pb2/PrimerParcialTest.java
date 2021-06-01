@@ -25,9 +25,16 @@ public class PrimerParcialTest {
 	@Test
 	public void queUnEstudiantePuedaPedirPrestadoUnLibroYSeanSolo2Permitidos() {
 		Estudiante nuevo= new Estudiante(41716163,"Agustin", "Romero");
-		Boolean estado= false; //falso porque no ha hecho ningun prestamo y todavía puede pedir los 2 que se le permite
-		Boolean estadoRetorno;
-		assertTrue(estadoRetorno=nuevo.pedirPrestadoUnLibro(estado));
-		//assertTrue(nuevo.pedirPrestadoUnSegundoLibro());
+		Boolean estado= false;//falso porque no ha hecho ningun prestamo y todavía puede pedir los 2 que se le permite
+		//Boolean estadoRetorno;
+		assertTrue((nuevo.pedirPrestadoUnLibro(estado)));
+		assertFalse(nuevo.pedirPrestadoUnSegundoLibro((Boolean)nuevo.pedirPrestadoUnLibro(estado=true),1));
+	}
+	
+	@Test
+	public void queLosLibrosImprimiblesMeDenUnaDevolucion() {
+		Historia nuevo1= new Historia(15, "Segunda Guerra Mundia","Milton");
+		Geografia nuevo2=new Geografia(30, "Geografia del Viejo Mundo","Oscar");
+		
 	}
 }

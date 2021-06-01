@@ -1,10 +1,18 @@
 package romero.agustin.p1.pb2;
 
-public class Historia extends Libro{
+import romero.agustin.p1.pb2.interfaces.IHistoria;
+
+public class Historia extends Libro implements IHistoria{
 
 	public Historia(Integer codigoLibro, String nombreLibro, String autorLibro) {
 		
 		super(codigoLibro, nombreLibro, autorLibro);
+	}
+
+	@Override
+	public String getImprisionDeLibro(String devolucion) {
+		
+		return devolucion;
 	}
 
 	
