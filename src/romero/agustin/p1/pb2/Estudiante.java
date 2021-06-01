@@ -40,4 +40,23 @@ public class Estudiante {
 		
 		Nombre = nombre;
 	}
+
+	public boolean pedirPrestadoUnLibro(Boolean estado) {
+		
+		int contadorPrestamo=0;
+		
+		if(contadorPrestamo == 0 && estado.equals(false)) {
+			estado=Boolean.TRUE;
+			contadorPrestamo++;
+			return estado;
+		}else {
+			if(contadorPrestamo==1 && estado.equals(true)) {
+				contadorPrestamo++;
+				return estado;
+			}else {
+				estado=false;
+				return estado;
+			}
+		}
+	}
 }
