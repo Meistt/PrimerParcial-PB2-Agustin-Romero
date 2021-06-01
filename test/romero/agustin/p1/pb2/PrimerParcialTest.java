@@ -32,9 +32,16 @@ public class PrimerParcialTest {
 	}
 	
 	@Test
-	public void queLosLibrosImprimiblesMeDenUnaDevolucion() {
+	public void queLosLibrosFotocopiablesMeDenUnaDevolucion() {
 		Historia nuevo1= new Historia(15, "Segunda Guerra Mundia","Milton");
 		Geografia nuevo2=new Geografia(30, "Geografia del Viejo Mundo","Oscar");
 		
+		String tipoLibro="Historia";
+		String tipoLibro2="Geografia";
+		String devolucionLibro="Puedo ser fotocopiado";
+		
+		assertEquals(devolucionLibro,nuevo1.getImprisionDeLibro(devolucionLibro,tipoLibro));
+		assertEquals(devolucionLibro, nuevo2.getImprisionDeLibro(devolucionLibro,tipoLibro2));
 	}
+	
 }

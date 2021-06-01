@@ -10,9 +10,18 @@ public class Geografia extends Libro implements IGeografia{
 	}
 
 	@Override
-	public String getImprisionDeLibro(String devolucion) {
+	public String getImprisionDeLibro(String devolucion, String tipoLibro) {
 		
-		return devolucion;
+		String devolucionLibro="Puedo ser fotocopiado";
+		String devolucionError="No puedo ser fotocopiado";
+		
+		if(devolucion.equals(devolucionLibro) && tipoLibro.equalsIgnoreCase("Geografia")) {
+			
+			return devolucion;
+			
+		}else
+			return devolucionError;
 	}
-
+		
 }
+
