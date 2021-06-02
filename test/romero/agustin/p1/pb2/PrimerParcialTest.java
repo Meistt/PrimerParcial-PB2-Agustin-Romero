@@ -26,7 +26,6 @@ public class PrimerParcialTest {
 	public void queUnEstudiantePuedaPedirPrestadoUnLibroYSeanSolo2Permitidos() {
 		Estudiante nuevo= new Estudiante(41716163,"Agustin", "Romero");
 		Boolean estado= false;//falso porque no ha hecho ningun prestamo y todavía puede pedir los 2 que se le permite
-		//Boolean estadoRetorno;
 		assertTrue((nuevo.pedirPrestadoUnLibro(estado)));
 		assertFalse(nuevo.pedirPrestadoUnSegundoLibro((Boolean)nuevo.pedirPrestadoUnLibro(estado=true),1));
 	}
@@ -42,6 +41,22 @@ public class PrimerParcialTest {
 		
 		assertEquals(devolucionLibro,nuevo1.getImprisionDeLibro(devolucionLibro,tipoLibro));
 		assertEquals(devolucionLibro, nuevo2.getImprisionDeLibro(devolucionLibro,tipoLibro2));
+	}
+	
+	@Test
+	public void queLosLibrosPrestadosSeanGuardadosEnUnArray() {
+		//agrego de vuelta lo del test de un estudiante que pidió prestado para guardarlo ahora en un array
+		Estudiante nuevo= new Estudiante(41716163,"Agustin", "Romero");
+		Boolean estado= false;//falso porque no ha hecho ningun prestamo y todavía puede pedir los 2 que se le permite
+		assertTrue((nuevo.pedirPrestadoUnLibro(estado)));
+		assertFalse(nuevo.pedirPrestadoUnSegundoLibro((Boolean)nuevo.pedirPrestadoUnLibro(estado=true),1));
+		
+		RegistroDeLibros nuevoRegistro= new RegistroDeLibros("Agustin","Romero","Historia Mundial I");
+		
+		nuevoRegistro.guardarDatosDePrestamosEnArray("Agustin","Romero","Historia Mundial I");
+		
+		//assertEquals(("Agustin","Romero","Historia Mundial I"),nuevoRegistro.duelvePrestamo());
+		
 	}
 	
 }
