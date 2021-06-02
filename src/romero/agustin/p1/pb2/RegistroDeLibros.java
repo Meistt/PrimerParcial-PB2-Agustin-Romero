@@ -16,20 +16,42 @@ public class RegistroDeLibros {
 		this.apellidoAlumno=apellidoAlumno;
 		this.nombreLibro=nombreLibro;
 		estadoLibro=true;
+		this.identificadorPrestamo=new Integer [300];
+		this.alumnoQueSolicitoPrestamo=new String [300];
+		this.libroSolicitado=new String [300];
 	}
 
 	
+	public int getContadorDePrestamosTotal() {
+		return contadorDePrestamosTotal;
+	}
+
+
+	public void setContadorDePrestamosTotal(int contadorDePrestamosTotal) {
+		this.contadorDePrestamosTotal = contadorDePrestamosTotal;
+	}
+
+
 	public void guardarDatosDePrestamosEnArray(String nombre, String apellido, String nombreLibro) {
-		
-		if(identificadorPrestamo[i]==null && alumnoQueSolicitoPrestamo[i] == null && libroSolicitado[i] == null) {
-			identificadorPrestamo[i]=((Integer)(i+4));
-			alumnoQueSolicitoPrestamo[i]=(nombre+apellido);
-			libroSolicitado[i]=nombreLibro;
+		String total;
+		if(identificadorPrestamo[i] ==null && alumnoQueSolicitoPrestamo[i] == null && libroSolicitado[i] == null) {
+			this.identificadorPrestamo[i]=(i);
+			this.alumnoQueSolicitoPrestamo[i]=(nombre+apellido);
+			this.libroSolicitado[i]=nombreLibro;
 			estadoLibro=false;
 			contadorDePrestamosTotal++;
 			i++;
+			
 		}
 	}
-	
+
+
+	public Object[] duelvePrestamo(String nombre, String apellido, String string3) {
+		String devolucion;
+		
+		return null;
+	}
+
+
 
 }

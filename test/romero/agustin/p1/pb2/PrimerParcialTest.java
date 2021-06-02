@@ -55,8 +55,9 @@ public class PrimerParcialTest {
 		
 		nuevoRegistro.guardarDatosDePrestamosEnArray("Agustin","Romero","Historia Mundial I");
 		
-		//assertEquals(("Agustin","Romero","Historia Mundial I"),nuevoRegistro.duelvePrestamo());
+		//assertEquals(("Agustin","Romero","Historia Mundial I"),nuevoRegistro.duelvePrestamo("Agustin","Romero","Historia Mundial I"));
 		
+		assertEquals(1,nuevoRegistro.getContadorDePrestamosTotal());
 	}
 	
 }
